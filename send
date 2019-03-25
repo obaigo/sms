@@ -1,0 +1,10 @@
+<?php
+  require __DIR__ . "/vendor/autoload.php";
+  use telesign\sdk\messaging\MessagingClient;
+  $customer_id = "371B2C94-5DCA-44D4-B93D-4B6A45F6AE10";
+  $api_key = "mrVdYFAhdUvljLSQp5jqvlzrg5VLkUlH3At92lwYFN7PbM5fHcZeVyiloJamTvMggvLTtMEZIvWgyvK+ZDRd4Q==";
+  $phone_number = "254729389283";
+  $message = "You're scheduled for a dentist appointment at 2:30PM.";
+  $message_type = "ARN";
+  $messaging = new MessagingClient($customer_id, $api_key);
+  $response = $messaging->message($phone_number, $message, $message_type);
